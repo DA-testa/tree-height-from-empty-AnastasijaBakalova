@@ -37,7 +37,10 @@ def main():
       flags.append(0)
       countRoute.append(0)
   if ("F" in readfrom) or ("f" in readfrom):
-    pass
+    name = input()
+    file = open(name)
+    count = int(file.readline)
+    parent_children = [int(j) for j in file.readline.split()]
 
 
 
@@ -47,4 +50,8 @@ def main():
     if(max2>max):
       max= max2
   print(max)
+sys.setrecursionlimit(10**7)  # max depth of recursion
+#threading.stack_size(2**27)   # new thread will get stack of such size
+#threading.Thread(target=main).start()
 main()
+# print(numpy.array([1,2,3]))
