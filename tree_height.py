@@ -58,7 +58,7 @@ def main():
         max= max2
     print(max)
 sys.setrecursionlimit(10**7)  # max depth of recursion
-#threading.stack_size(2**27)   # new thread will get stack of such size
-#threading.Thread(target=main).start()
+threading.stack_size(2**27)   # new thread will get stack of such size
+threading.Thread(target=main).start()
 main()
 # print(numpy.array([1,2,3]))
