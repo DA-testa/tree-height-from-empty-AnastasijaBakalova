@@ -3,6 +3,7 @@
 import sys
 import threading
 import numpy
+import time
 list = []
 flags = []
 countRoute = []
@@ -56,9 +57,9 @@ def main():
       max2 = compute_height(i, parent_children[i], parent_children)
       if(max2>max):
         max= max2
+    time.sleep(0.100)
     print(max)
-sys.setrecursionlimit(10**7)  # max depth of recursion
+sys.setrecursionlimit(10**9)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
 main()
-# print(numpy.array([1,2,3]))
