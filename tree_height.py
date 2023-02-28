@@ -1,9 +1,8 @@
 # python3
-
+import time
 import sys
 import threading
 import numpy
-import time
 list = []
 flags = []
 countRoute = []
@@ -37,15 +36,18 @@ def main():
     #print(parent_children[4])
     
   if ("F" in readfrom) or ("f" in readfrom):
-    name = "test/"+input()
-    if not("a" in name):
-      bool1 = True
-      with open(name) as file:
-        count = int(next(file))
-        #print(count)
-        parent_children = []
-        for line in file:
-            parent_children= ([int(j) for j in line.split()])
+    name = "test/"+input() +".txt"
+    try:
+      if not("a" in name):
+        bool1 = True
+        with open(name) as file:
+          count = int(next(file))
+          #print(count)
+          parent_children = []
+          for line in file:
+              parent_children= ([int(j) for j in line.split()])
+    except EOFError:
+      pass
   if bool1:  
     for i in range(0, count, 1) :
       list.append(i)
@@ -59,6 +61,7 @@ def main():
         max= max2
     time.sleep(0.100)
     print(max)
+    return
 sys.setrecursionlimit(10**9)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
