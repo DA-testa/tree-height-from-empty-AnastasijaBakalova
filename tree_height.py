@@ -35,7 +35,7 @@ def main():
       #print(parent_children[4])
       
     if ("F" in readfrom) or ("f" in readfrom):
-      name = "test/"+input() +".txt"
+      name = "test/"+input()
       if not("a" in name):
         bool1 = True
         with open(name) as file:
